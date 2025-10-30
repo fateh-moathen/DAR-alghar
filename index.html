@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>دار الغار</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #324d3a;
+      --gold: #d4af37;
+      --gold-light: #f0e68c;
+      --white: #ffffff;
+      --text-light: #f9f7f0;
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-light);
+      position: relative;
+      overflow-x: hidden;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* تأثير اللمعة المتحركة على الشعار */
+    @keyframes shine {
+      0% { background-position: -600px; }
+      100% { background-position: 600px; }
+    }
+
+    .logo-wrapper {
+      position: relative;
+      display: inline-block;
+      margin: 0 auto 22px;
+      padding: 14px;
+      border-radius: 18px;
+      background: linear-gradient(110deg, transparent 45%, rgba(255,255,255,0.25) 50%, transparent 55%);
+      background-size: 300% 100%;
+      animation: shine 4s infinite ease-in-out;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
+
+    .logo {
+      width: 160px;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .logo:hover {
+      transform: scale(1.06);
+    }
+
+    .container {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 45px 0 25px;
+    }
+
+    h1 {
+      font-size: 2.7rem;
+      font-weight: 800;
+      color: var(--white);
+      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      margin-top: 18px;
+      letter-spacing: 1.2px;
+      background: linear-gradient(to right, var(--white), var(--gold-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .description {
+      text-align: center;
+      font-size: 1.35rem;
+      line-height: 1.9;
+      margin: 32px auto 50px;
+      max-width: 680px;
+      color: #eae7d6;
+      font-weight: 400;
+      background: rgba(0, 0, 0, 0.22);
+      padding: 24px 30px;
+      border-radius: 26px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 1s ease-out;
+      white-space: pre-line;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      margin: 50px 0;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      padding: 19px 32px;
+      border-radius: 65px;
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--bg);
+      font-size: 1.32rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+      transition: all 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      backdrop-filter: blur(12px);
+      border: 2px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+      transition: left 0.7s;
+    }
+
+    .social-btn:hover {
+      transform: translateY(-12px) scale(1.04);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+      background: rgba(255, 255, 255, 0.99);
+    }
+
+    .social-btn:hover::before {
+      left: 100%;
+    }
+
+    .social-btn i {
+      font-size: 2rem;
+      width: 52px;
+      text-align: center;
+    }
+
+    .whatsapp { color: #25D366; }
+    .instagram { color: #E1306C; }
+    .facebook { color: #1877F2; }
+
+    footer {
+      text-align: center;
+      margin-top: 65px;
+      padding: 32px 18px;
+      color: #e2dcc8;
+      font-size: 1.05rem;
+      font-weight: 500;
+      background: rgba(0, 0, 0, 0.24);
+      border-radius: 22px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .creator {
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--gold-light);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.35s ease;
+      padding: 10px 20px;
+      border-radius: 14px;
+      background: rgba(212, 175, 55, 0.08);
+    }
+
+    .creator:hover {
+      color: var(--gold);
+      background: rgba(212, 175, 55, 0.15);
+      transform: scale(1.06);
+    }
+
+    .creator i {
+      font-size: 1.3rem;
+      color: var(--gold);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      .description {
+        font-size: 1.22rem;
+        padding: 22px 24px;
+      }
+      .social-btn {
+        padding: 17px 26px;
+        font-size: 1.22rem;
+      }
+      .social-btn i {
+        font-size: 1.8rem;
+      }
+      .logo {
+        width: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-wrapper">
+        <img src="logo.png" alt="دار الغار" class="logo">
+      </div>
+      <h1>دار الغار</h1>
+    </header>
+
+    <p class="description">دار الغار 
+متخصصون بانواع صابون الغار المعطر و التقليدي تشكيلة واسعة
+شرقيات و موزاييك
+نحاسيات للزينة
+عطور عربية وغيرها</p>
+
+    <div class="social-links">
+      <a href="https://wa.me/message/26LV3FNE4Y3FA1" target="_blank" class="social-btn">
+        <i class="fab fa-whatsapp whatsapp"></i>
+        واتساب
+      </a>
+      <a href="https://www.instagram.com/dar.el.ghar/followers/mutualOnly#" target="_blank" class="social-btn">
+        <i class="fab fa-instagram instagram"></i>
+        إنستغرام
+      </a>
+      <a href="https://www.facebook.com/share/1CjEDJUmPp/?mibextid=qi2Omg" target="_blank" class="social-btn">
+        <i class="fab fa-facebook facebook"></i>
+        فيسبوك
+      </a>
+    </div>
+
+    <footer>
+      <p>جميع الحقوق محفوظة © 2025</p>
+      <a href="https://www.instagram.com/fateh_mouazen" target="_blank" class="creator">
+        <i class="fab fa-instagram"></i>
+        تم إنشاء هذا الموقع بواسطة فاتح مؤذن
+      </a>
+    </footer>
+  </div>
+</body>
+</html>
+
